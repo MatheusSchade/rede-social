@@ -9,6 +9,9 @@ flex-direction: column;
 align-items: center;
 margin: 0 auto;
 margin-top: 10vh;
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 100vw;
+    }
 `
 
 export const PostTitle = styled.input`
@@ -19,6 +22,9 @@ text-align: center;
 width: 50vw;
 outline: none;
 background-color: ${Color5};
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 100%;
+    }
 `
 
 export const PostComment = styled.input`
@@ -29,6 +35,9 @@ border: none;
 margin-bottom: 0px;
 outline: none;
 background-color: ${Color5};
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 100%;
+    }
 `
 
 export const Form = styled.form`
@@ -44,6 +53,9 @@ border-top-right-radius: 5px;
 border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
 margin: 0 auto;
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 90vw;
+    }
 
 button {
     width: 102%;

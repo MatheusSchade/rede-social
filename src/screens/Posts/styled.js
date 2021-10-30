@@ -8,6 +8,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
+
 `
 
 export const Date = styled.p`
@@ -39,6 +40,9 @@ border-radius: 5px;
 box-shadow: 3px 3px 3px gray;
 overflow: hidden;
 background-color: ${Color5};
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 90vw;
+    }
 `
 
 export const UserName = styled.div`
@@ -53,6 +57,9 @@ background: ${Color1};
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 color: ${Color5};
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 100%;
+    }
 `
 
 export const Text = styled.div`
@@ -119,6 +126,10 @@ border-top-right-radius: 5px;
 border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
 margin: 0 auto;
+
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 90vw;
+    }
 input {
     width: 100%;
     height: 15vh;
@@ -127,6 +138,9 @@ input {
     outline: none; 
     border: none;
     background-color: ${Color5};
+    @media(max-width: 400px) and (max-height: 700px) {
+    width: 100%;
+    }
 }
 button {
     width: 50.5vw;
@@ -142,5 +156,8 @@ button {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom: 1px solid ${Color1};
+    @media(max-width: 400px) and (max-height: 700px) {
+    width: 101%;
+    }
 }
 `

@@ -26,6 +26,9 @@ border-top-right-radius: 7px;
 box-shadow: 3px 3px 3px gray;
 overflow: hidden;
 background-color: ${Color5};
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 90vw;
+    }
 `
 
 export const UserName = styled.div`
@@ -39,6 +42,19 @@ justify-content: space-between;
 overflow: hidden;
 background-color: ${Color1};
 color: ${Color5};
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 100%;
+    }
+p {
+    @media(max-width: 400px) and (max-height: 700px) {
+    width: 28vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    }
+}
 `
 
 export const Text = styled.div`
@@ -96,4 +112,7 @@ align-items: center;
 font-weight: bold;
 color: ${Color5};
 cursor: pointer;
+@media(max-width: 400px) and (max-height: 700px) {
+    width: 20vw;
+    }
 `

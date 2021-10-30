@@ -27,7 +27,8 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: default;
 
     @media(max-width: 400px) and (max-height: 700px) {
@@ -38,7 +39,7 @@ h1{
 
 export const LogoIcon = styled(FaUserFriends)`
 margin-left: 12px;
-margin-top: 4px;
+margin-top: 2px;
 color: ${Color5};
 @media(max-width: 400px) and (max-height: 700px) {
     margin-left: 10px;
@@ -65,7 +66,7 @@ align-items: center;
 `
 
 export const Home3 = styled(ImHome3)`
-margin-left: 4px;
+margin-right: 4px;
 margin-bottom: 4px;
 color: ${Color5};
 cursor: pointer;

@@ -16,7 +16,7 @@ const Header = () => {
     <Head>
 
       <LeftButton onClick={() => goToFeed(history)}>
-        HOME <Home3 />
+        <Home3 /> HOME
       </LeftButton>
 
       <h1>labEddit <LogoIcon /></h1>
