@@ -14,7 +14,7 @@ max-height: 100vh;
 export const SignUpImage = styled.div`
 width: 33.25vw;
 margin-top: 25px;
-@media(max-width: 600px) and (max-height: 900px) {
+@media(max-width: 800px) and (max-height: 1300px) {
     width: 90vw;
     }
 img {
@@ -42,6 +42,10 @@ input {
     @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    width: 65vw;
+    font-size: 16px;
+    }
 }
 button {
     margin-top: 2.5vh;
@@ -54,6 +58,10 @@ button {
     color: white;
     @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
+    }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    width: 65vw;
+    font-size: 16px;
     }
 }
 `
@@ -76,7 +84,10 @@ export const LoginButton = styled.button`
     @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
-    
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    width: 65vw;
+    font-size: 16px;
+    }
     
     :hover {
         background-color: ${Color5};

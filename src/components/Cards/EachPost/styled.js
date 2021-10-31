@@ -29,6 +29,9 @@ background-color: ${Color5};
 @media(max-width: 600px) and (max-height: 900px) {
 width: 90vw;
 }
+@media(min-width: 601px) and (max-width: 900px) {
+width: 90vw;
+}
 `
 
 export const UserName = styled.div`
@@ -42,6 +45,10 @@ background-color: ${Color1};
 color: ${Color5};
 @media(max-width: 600px) and (max-height: 900px) {
 width: 100%;
+}
+@media(min-width: 601px) and (max-width: 900px) {
+width: 90vw;
+font-size: 22px;
 }
 p {
     width: 30vw;
@@ -65,6 +72,14 @@ export const Text = styled.div`
 width: 90%;
 min-height: 6vh;
 margin-left: 12px;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    h3 {
+font-size: 25px;
+}
+p {
+font-size: 18px;
+}
+    }
 @media(max-width: 600px) and (max-height: 900px) {
 h3 {
 font-size: 18px;
@@ -88,6 +103,9 @@ export const Coments = styled.div`
 max-width: 50%;
 margin-right: 8px;
 cursor: pointer;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 20px;
+    }
 `
 
 export const Date = styled.h6`
@@ -106,6 +124,10 @@ margin-left: -150px;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 18px;
+    margin-left: -60px;
+    }
 `
 
 export const Enjoy = styled.div`
@@ -118,6 +140,9 @@ align-items: center;
 export const CountEnjoys = styled.p`
 font-weight: bold;
 margin: 0 10px;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 20px;
+    }
 `
 
 export const DetailButton = styled.div`
@@ -135,7 +160,11 @@ font-weight: bold;
 color: ${Color5};
 cursor: pointer;
 @media(max-width: 600px) and (max-height: 900px) {
-    width: 5vw;
-    margin-left: 32px;
-    }
+width: 5vw;
+margin-left: 32px;
+}
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+font-size: 18px;
+margin-left: 82px;
+}
 `

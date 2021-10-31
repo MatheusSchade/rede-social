@@ -29,6 +29,9 @@ h1{
     @media(max-width: 600px) and (max-height: 900px) {
     font-size: 24px  
     }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 38px;
+    }
 
 }
 `
@@ -59,6 +62,9 @@ align-items: center;
 @media(max-width: 600px) and (max-height: 900px) {
     font-size: 14px;
     }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 18px;
+    }
 
 `
 
@@ -73,6 +79,9 @@ export const LogOutOutline = styled(IoLogOut)`
 margin-left: 4px;
 color: ${Color5};
 cursor: pointer;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    margin-bottom: 3px;
+    }
 `
 
 export const RightButton = styled.button`
@@ -90,4 +99,7 @@ align-items: center;
 @media(max-width: 600px) and (max-height: 900px) {
 font-size: 14px;
 }
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 18px;
+    }
 `

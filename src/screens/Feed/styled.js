@@ -9,9 +9,9 @@ flex-direction: column;
 align-items: center;
 margin: 0 auto;
 margin-top: 10vh;
-@media(max-width: 600px) and (max-height: 900px) {
-    width: 100vw;
-    }
+@media(max-width: 900px) and (max-height: 1300px) {
+width: 100vw;
+}
 `
 
 export const PostTitle = styled.input`
@@ -23,8 +23,12 @@ width: 50vw;
 outline: none;
 background-color: ${Color5};
 @media(max-width: 600px) and (max-height: 900px) {
-    width: 100%;
-    }
+width: 100%;
+}
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+width: 100%;
+font-size: 24px;
+}
 `
 
 export const PostComment = styled.input`
@@ -36,8 +40,12 @@ margin-bottom: 0px;
 outline: none;
 background-color: ${Color5};
 @media(max-width: 600px) and (max-height: 900px) {
-    width: 100%;
-    }
+width: 100%;
+}
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+width: 100%;
+font-size: 24px;
+}
 `
 
 export const Form = styled.form`
@@ -54,8 +62,11 @@ border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
 margin: 0 auto;
 @media(max-width: 600px) and (max-height: 900px) {
-    width: 90vw;
-    }
+width: 90vw;
+}
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+width: 90%;
+}
 
 button {
     width: 102%;
@@ -69,5 +80,9 @@ button {
     font-weight: bold;
     border: 2px solid ${Color1};
     outline: none;
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    width: 100%;
+    font-size: 20px;
+    }
 }
 `
