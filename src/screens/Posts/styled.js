@@ -40,7 +40,7 @@ border-radius: 5px;
 box-shadow: 3px 3px 3px gray;
 overflow: hidden;
 background-color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 600px) and (max-height: 900px) {
     width: 90vw;
     }
 `
@@ -57,7 +57,7 @@ background: ${Color1};
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 600px) and (max-height: 900px) {
     width: 100%;
     }
 `
@@ -127,7 +127,7 @@ border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
 margin: 0 auto;
 
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 600px) and (max-height: 900px) {
     width: 90vw;
     }
 input {
@@ -138,7 +138,7 @@ input {
     outline: none; 
     border: none;
     background-color: ${Color5};
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 100%;
     }
 }
@@ -156,7 +156,7 @@ button {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom: 1px solid ${Color1};
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 101%;
     }
 }

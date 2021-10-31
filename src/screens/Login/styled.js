@@ -7,6 +7,9 @@ margin-top: 25px;
 @media(max-width: 400px) and (max-height: 700px) {
     width: 90vw;
     }
+@media(min-width: 401px) and (max-width: 600px) and (min-height: 701px) and (max-height: 900px) {
+    width: 90vw; 
+}
 img {
     width: 100%;
     max-height: 80vh;
@@ -21,9 +24,9 @@ align-items: center;
 width: 100vw;
 height: 100vh;
 margin-top: 10vh;
-@media(max-width: 400px) and (max-height: 700px) {
-    height: 75vw;
-    }
+@media(max-width: 600px) and (max-height:900px) {
+height: 75vw;
+}
 `
 
 export const Form = styled.form`
@@ -42,7 +45,7 @@ input {
     text-align: center;
     font-weight: bold;
     color: ${Color1};
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
 }
@@ -56,7 +59,7 @@ button {
     background-color: ${Color1};
     color: white;
     box-shadow: 3px 3px 3px gray;
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
 }
@@ -77,10 +80,9 @@ export const CadastroButton = styled.button`
     cursor: pointer;
     color: ${Color1};
     background-color: white;
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
-    
     :hover {
         background-color: ${Color5};
         border-radius: 10px;

@@ -21,17 +21,22 @@ const GlobalState = (props) => {
         let year = nwd && nwd[0]
         let month = nwd && nwd[1]
 
-        let newdt = nwd &&nwd[2].split("T")
+        let newdt = nwd && nwd[2].split("T")
         let day = newdt && newdt[0]
         let newHour = newdt && newdt[1].split(".")
         let moment = newHour && newHour[0]
         let time = moment && moment.split(":")
         let hour = time && time[0] - 3
+        if (hour < 0) {
+            hour = hour + 3
+        }
         let minute = time && time[1]
         let second = time && time[2]
         let phrase = `${day && day}-${month && month}-${year && year}, às ${hour && hour}:${minute && minute}:${second && second}`
         return phrase
     }
+
+
 
     // Votar em um comentário
 

@@ -17,23 +17,19 @@ left: 0;
 width: 100%;
 z-index: 999px;
 
-@media(max-width: 400px) and (max-height: 700px) {
-    height: 8vh;
-}
-
 h1{
     color: ${Color5};
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: default;
 
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     font-size: 24px  
     }
+
 }
 `
 
@@ -41,7 +37,7 @@ export const LogoIcon = styled(FaUserFriends)`
 margin-left: 12px;
 margin-top: 2px;
 color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 600px) and (max-height: 900px) {
     margin-left: 10px;
     margin-top: 0px;
 }
@@ -60,9 +56,10 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 600px) and (max-height: 900px) {
     font-size: 14px;
     }
+
 `
 
 export const Home3 = styled(ImHome3)`
@@ -90,7 +87,7 @@ background-color: ${Color1};
 display: flex;
 justify-content: center;
 align-items: center;
-@media(max-width: 400px) and (max-height: 700px) {
-    font-size: 14px;
-    }
+@media(max-width: 600px) and (max-height: 900px) {
+font-size: 14px;
+}
 `

@@ -14,7 +14,7 @@ max-height: 100vh;
 export const SignUpImage = styled.div`
 width: 33.25vw;
 margin-top: 25px;
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 600px) and (max-height: 900px) {
     width: 90vw;
     }
 img {
@@ -39,7 +39,7 @@ input {
     text-align: center;
     font-weight: bold;
     color: ${Color1};
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
 }
@@ -52,7 +52,7 @@ button {
     cursor: pointer;
     background-color: ${Color1};
     color: white;
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
 }
@@ -73,7 +73,7 @@ export const LoginButton = styled.button`
     cursor: pointer;
     color: ${Color1};
     background-color: white;
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 80vw;
     }
     
