@@ -19,7 +19,7 @@ Esse projeto foi desevolvido para Desktop, porém também é Mobile Responsive p
 * Axios;
 * React-Router-Dom;
 
-## Sinta-se à vontade para entrar em contato comigo pelo [Linkedin](https://www.linkedin.com/in/matheus-schade-013772127/)
+## Sinta-se à vontade para entrar em contato comigo pelo [Linkedin](https://www.linkedin.com/in/matheus-schade/)
 
 ### Algumas funcionalidades que serão adicionadas em breve:
 
