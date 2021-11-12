@@ -98,6 +98,7 @@ justify-content: center;
 align-items: center;
 @media(max-width: 600px) and (max-height: 900px) {
 font-size: 14px;
+margin-right: 15px;
 }
 @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
     font-size: 18px;

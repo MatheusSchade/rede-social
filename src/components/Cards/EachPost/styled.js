@@ -43,6 +43,7 @@ display: flex;
 align-items: center;
 background-color: ${Color1};
 color: ${Color5};
+cursor: default;
 @media(max-width: 600px) and (max-height: 900px) {
 width: 100%;
 }
@@ -57,13 +58,15 @@ p {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    @media(max-width: 600px) and (max-height: 900px) {
-    width: 20vw;
+    @media(min-width: 301px) and (max-width: 900px) and (min-height: 501px) and (max-height: 1300px) {
+    width: 25%;
+    font-size: 13px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    margin-right: 2px;
     }
 }
 `
@@ -102,10 +105,10 @@ justify-content: space-between;
 export const Coments = styled.div`
 max-width: 50%;
 margin-right: 8px;
-cursor: pointer;
-@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
-    font-size: 20px;
-    }
+cursor: default;
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 501px) and (max-height: 1300px) {
+font-size:12px;
+}
 `
 
 export const Date = styled.h6`
@@ -116,7 +119,7 @@ width: 50%;
 font-weight: 100;
 margin-left: -150px;
 @media(max-width: 600px) and (max-height: 900px) {
-    margin-left: 10px;
+    margin-left: 5px;
     width: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -124,10 +127,14 @@ margin-left: -150px;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     }
-    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
     font-size: 18px;
     margin-left: -60px;
     }
+
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 401px) and (max-height: 1300px) {
+font-size: 8px;
+}
 `
 
 export const Enjoy = styled.div`
@@ -159,12 +166,14 @@ align-items: center;
 font-weight: bold;
 color: ${Color5};
 cursor: pointer;
-@media(max-width: 600px) and (max-height: 900px) {
-width: 5vw;
-margin-left: 32px;
+margin-right: -5px;
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 601px) and (max-height: 1300px) {
+font-size: 12px;
+margin-left: 15px;
 }
-@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
-font-size: 18px;
-margin-left: 82px;
+
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 401px) and (max-height: 1300px) {
+font-size: 12px;
+margin-left: 11px;
 }
 `

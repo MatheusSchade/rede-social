@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { GlobalContext } from "./GlobalContext"
-import axios from "axios"
-import { urlBase } from "../constants/url"
 import useForm from "../hooks/useForm"
-import { goToFeed, goToLogin } from "../routes/coordinator"
+import { goToLogin } from "../routes/coordinator"
+import { PostLogin } from "../services/PostLogin"
+import { PostSignUp } from "../services/PostSignUp"
+import { CreatePost } from "../services/CreatePost"
+import { GetPostsList } from "../services/GetPostsList"
+import { CreateComment } from "../services/CreateComent"
+import { GetPostComments } from "../services/GetPostComments"
+import { DeleteVotePost } from "../services/DeleteVotePost"
+import { DeleteVoteComment } from "../services/DeleteVoteComment"
+import { HatePost } from "../services/HatePost"
+import { EnjoyPost } from "../services/EnjoyPost"
+import { HateComment } from "../services/HateComment"
+import { EnjoyComment } from "../services/EnjoyComment"
 
 const GlobalState = (props) => {
     const [form, onChange, clear] = useForm({ username: "", email: "", password: "", title: "", body: "" })
@@ -14,352 +24,82 @@ const GlobalState = (props) => {
     const [postDirection, setPostDirection] = useState([])
     const [commentDirection, setCommentDirection] = useState([])
 
-    // Converter data no formato advindo da api
+    // Pegar lista de comentários;
+
+    const getPostsList = () => {
+        GetPostsList(setPostList)
+    }
+
+    // Converter data no formato advindo da api;
 
     const stringToDate = (date) => {
         let nwd = date && date.split("-")
         let year = nwd && nwd[0]
         let month = nwd && nwd[1]
-
         let newdt = nwd && nwd[2].split("T")
         let day = newdt && newdt[0]
         let newHour = newdt && newdt[1].split(".")
         let moment = newHour && newHour[0]
         let time = moment && moment.split(":")
         let hour = time && time[0] - 3
-        if (hour < 0) {
-            hour = hour + 3
-        }
+        if (hour < 0) { hour = hour + 3 }
         let minute = time && time[1]
         let second = time && time[2]
         let phrase = `${day && day}-${month && month}-${year && year}, às ${hour && hour}:${minute && minute}:${second && second}`
         return phrase
     }
 
-
-
-    // Votar em um comentário
+    // Votar em um comentário;
 
     const enjoyComment = (id, voteId) => {
-
-        const index = commentDirection.findIndex((item) => item.postnumber === voteId)
-        commentDirection.splice(index, 1)
-
-        if (index === -1) {
-
-            const body = {
-                direction: 1,
-            }
-            axios.post(`${urlBase}/comments/${voteId}/votes`, body, {
-                headers: {
-                    Authorization: token,
-                }
-            })
-                .then((response) => {
-                    getPostComments(id)
-
-                    const newCommentChoosen = {
-                        postnumber: voteId,
-                        status: response.status
-                    }
-
-                    const postIndex = commentDirection.findIndex((item) => item.postnumber === voteId)
-
-                    if (postIndex === -1) {
-                        setCommentDirection(
-                            [...commentDirection, newCommentChoosen]
-
-                        )
-                    } else {
-                        commentDirection.splice(postIndex, 1, newCommentChoosen)
-                        setCommentDirection(commentDirection)
-                    }
-
-                })
-                .catch((error) => {
-                    alert(error.response)
-                })
-        } else {
-            deleteVoteComment(id, voteId)
-        }
+        EnjoyComment(id, voteId, commentDirection, getPostComments, setCommentDirection, deleteVoteComment)
     }
 
     const hateComment = (id, voteId) => {
-
-        const index = commentDirection.findIndex((item) => item.postnumber === voteId)
-        commentDirection.splice(index, 1)
-
-        if (index === -1) {
-
-            const body = {
-                direction: -1,
-            }
-            axios.post(`${urlBase}/comments/${voteId}/votes`, body, {
-                headers: {
-                    Authorization: token,
-                }
-            })
-                .then((response) => {
-                    getPostComments(id)
-
-                    const newPostChoosen = {
-                        postnumber: voteId,
-                        status: response.status
-                    }
-
-                    const postIndex = commentDirection.findIndex((item) => item.postnumber === voteId)
-
-                    if (postIndex === -1) {
-                        setCommentDirection(
-                            [...commentDirection, newPostChoosen]
-                        )
-                    } else {
-                        commentDirection.splice(postIndex, 1, newPostChoosen)
-                        setCommentDirection(commentDirection)
-                    }
-                })
-                .catch((error) => {
-                    alert(error.response)
-                })
-        } else {
-            deleteVoteComment(id, voteId)
-        }
+        HateComment(id, voteId, setCommentDirection, commentDirection, deleteVoteComment, getPostComments)
     }
 
     const deleteVoteComment = (id, voteId) => {
-
-        axios.delete(`${urlBase}/comments/${voteId}/votes`, {
-            headers: {
-                Authorization: token,
-            }
-        })
-            .then((response) => {
-                getPostComments(id)
-
-            })
-            .catch((error) => {
-                alert("Deu erro!")
-            })
+        DeleteVoteComment(id, voteId, getPostComments)
     }
 
-    // Votar em um post:
+    // Votar em um post;
 
     const enjoyPost = (type, id) => {
-
-        const index = postDirection.findIndex((item) => item.postnumber === id)
-        postDirection.splice(index, 1)
-
-        if (index === -1) {
-
-
-            const body = {
-                direction: 1,
-            }
-
-            axios.post(`${urlBase}/${type}/${id}/votes`, body, {
-                headers: {
-                    Authorization: token,
-                }
-            })
-                .then((response) => {
-                    getPosts()
-
-                    const newPostChoosen = {
-                        postnumber: id,
-                        status: response.status
-                    }
-
-                    const postIndex = postDirection.findIndex((item) => item.postnumber === id)
-
-                    if (postIndex === -1) {
-                        setPostDirection(
-                            [...postDirection, newPostChoosen]
-                        )
-                    } else {
-                        postDirection.splice(postIndex, 1, newPostChoosen)
-                        setPostDirection(postDirection)
-                    }
-
-                })
-                .catch((error) => {
-                    alert(error.response)
-                })
-
-
-        } else {
-
-
-            deleteVotePost(type, id)
-
-
-        }
-
+        EnjoyPost(type, id, deleteVotePost, setPostDirection, postDirection, getPostsList)
     }
 
     const hatePost = (type, id) => {
-
-        const index = postDirection.findIndex((item) => item.postnumber === id)
-        postDirection.splice(index, 1)
-
-        if (index === -1) {
-
-
-            const body = {
-                direction: -1,
-            }
-
-            axios.put(`${urlBase}/${type}/${id}/votes`, body, {
-                headers: {
-                    Authorization: token,
-                }
-            })
-                .then((response) => {
-                    getPosts()
-
-                    const newPostChoosen = {
-                        postnumber: id,
-                        status: response.status
-                    }
-
-                    const postIndex = postDirection.findIndex((item) => item.postnumber === id)
-
-                    if (postIndex === -1) {
-                        setPostDirection(
-                            [...postDirection, newPostChoosen]
-                        )
-                    } else {
-                        postDirection.splice(postIndex, 1, newPostChoosen)
-                        setPostDirection(postDirection)
-                    }
-
-                })
-                .catch((error) => {
-                    alert("Deu erro!")
-                })
-
-
-        } else {
-
-
-            deleteVotePost(type, id)
-
-
-        }
-
+        HatePost(type, id, getPostsList, deleteVotePost, setPostDirection, postDirection)
     }
 
     const deleteVotePost = (type, id) => {
-
-        axios.delete(`${urlBase}/posts/${id}/votes`, {
-            headers: {
-                Authorization: token,
-            }
-        })
-            .then((response) => {
-                getPosts()
-
-            })
-            .catch((error) => {
-                alert("Deu erro!")
-            })
+        DeleteVotePost(type, id, getPostsList)
     }
 
     // Comentar em um post;
 
-    const createComment = (id) => {
-
-        const body = {
-            body: form.body
-        }
-
-        axios.post(`${urlBase}/posts/${id}/comments`, body, {
-            headers: {
-                Authorization: token,
-            }
-        })
-            .then((response) => {
-                alert("Comentário adicionado com sucesso!")
-                getPostComments(id)
-
-            })
-            .catch((error) => {
-                alert(error.response)
-            })
-    }
-
     const onSubmitNewComment = (event, id) => {
         event.preventDefault()
         clear()
-        createComment(id)
-        getPostComments(id)
+        CreateComment(id, form, getPostComments)
     }
 
-    // Pegar comentários dos posts
+    // Pegar comentários dos posts;
 
     const getPostComments = (id) => {
-        axios.get(`${urlBase}/posts/${id}/comments`, {
-            headers: {
-                Authorization: token,
-            }
-        })
-            .then((response) => {
-                setCommentList(response.data)
-
-            })
-            .catch((error) => {
-                alert(error.response)
-            })
+        GetPostComments(id, setCommentList)
     }
 
-    // Postar um novo Post
-
-    const createPost = () => {
-        const body = {
-            title: form.title,
-            body: form.body
-        }
-        axios.post(`${urlBase}/posts`, body, {
-            headers: {
-                Authorization: token,
-            }
-        })
-            .then((response) => {
-                alert("Post criado com sucesso!")
-                getPosts()
-            })
-            .catch((error) => {
-                alert("Não foi possível criar esse post, tente novamente mais tarde!")
-            })
-
-    }
+    // Postar um novo Post;
 
     const onSubmitNewPost = (event, history) => {
         event.preventDefault()
         clear()
-        createPost(history)
+        CreatePost(form, getPostsList)
     }
 
-    // Pegar lista de posts da API=
-
-    const getPosts = () => {
-        axios.get(`${urlBase}/posts`, {
-            headers: {
-                Authorization: token,
-            }
-        })
-            .then((response) => {
-                setPostList(response.data)
-            })
-            .catch((error) => {
-                console.log(error.response)
-            })
-    }
-
-    useEffect(() => {
-        getPosts()
-    }, [token])
-
-    // Botão de Login / Logout
+    // Botão de Login e Logout do Header;
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -375,44 +115,20 @@ const GlobalState = (props) => {
         }
     }
 
-    // Formulário de login:
-
-    const login = (history) => {
-        axios.post(`${urlBase}/users/login`, form)
-            .then((response) => {
-                localStorage.setItem(`token`, response.data.token)
-                goToFeed(history)
-                setRightButtonText("LOGOUT")
-            })
-            .catch((error) => {
-                alert(`Erro no login, tente novamente mais tarde!`, error.response.data.message)
-            })
-    }
+    // Formulário de login;
 
     const onSubmitForm = (event, history) => {
         event.preventDefault()
         clear()
-        login(history)
+        PostLogin(history, form, setRightButtonText)
     }
 
-    // Formulário de Cadastro:
-
-    const signUp = (history) => {
-        axios.post(`${urlBase}/users/signup`, form)
-            .then((response) => {
-                localStorage.setItem(`token`, response.data.token)
-                goToFeed(history)
-                setRightButtonText("LOGOUT")
-            })
-            .catch((error) => {
-                alert(`Erro no cadastro, tente novamente mais tarde!`, error)
-            })
-    }
+    // Formulário de Cadastro;
 
     const onSignUpForm = (event, history) => {
         event.preventDefault()
         clear()
-        signUp(history)
+        PostSignUp(history, form, setRightButtonText)
     }
 
     return (
@@ -426,16 +142,17 @@ const GlobalState = (props) => {
             onSubmitNewComment,
             getPostComments,
             onSubmitNewPost,
-            getPosts,
             postList,
             rightButtonAction,
             rightButtonText,
             onSubmitForm,
             onSignUpForm,
-            login,
             form,
             onChange,
-            clear
+            clear,
+            setRightButtonText,
+            setPostList,
+            getPostsList
         }}>
             {props.children}
         </GlobalContext.Provider>

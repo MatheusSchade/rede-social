@@ -19,31 +19,23 @@ height: 4vh;
 border: none;
 border-bottom: 1px solid grey;
 text-align: center;
-width: 50vw;
+width: 100%;
 outline: none;
 background-color: ${Color5};
-@media(max-width: 600px) and (max-height: 900px) {
-width: 100%;
-}
 @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
-width: 100%;
 font-size: 24px;
 }
 `
 
 export const PostComment = styled.input`
-width: 50vw;
+width: 100%;
 min-height: 15vh;
 text-align: center;
 border: none;
 margin-bottom: 0px;
 outline: none;
 background-color: ${Color5};
-@media(max-width: 600px) and (max-height: 900px) {
-width: 100%;
-}
 @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
-width: 100%;
 font-size: 24px;
 }
 `
@@ -61,11 +53,12 @@ border-top-right-radius: 5px;
 border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
 margin: 0 auto;
-@media(max-width: 600px) and (max-height: 900px) {
-width: 90vw;
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 601px) and (max-height: 1300px) {
+    width: 90vw;
 }
-@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
-width: 90%;
+
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 401px) and (max-height: 1300px) {
+    width: 90vw;
 }
 
 button {

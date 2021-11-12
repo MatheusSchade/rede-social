@@ -3,7 +3,7 @@ import { Color1, Color5 } from "../../constants/colors"
 import { BsArrowUpCircleFill, BsArrowDownCircleFill } from "react-icons/bs"
 
 export const Body = styled.div`
-margin-top: 13vh;
+margin-top: 11vh;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -11,7 +11,7 @@ justify-content: space-between;
 `
 
 export const Date = styled.p`
-margin-right: 12px;
+margin-right: 14px;
 color: ${Color5};
 font-size: 10px;
 @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
@@ -59,8 +59,10 @@ background: ${Color1};
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 color: ${Color5};
+cursor: default;
 @media(max-width: 600px) and (max-height: 900px) {
     width: 100%;
+    font-size: 12px;
     }
     @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
     font-size: 22px;
