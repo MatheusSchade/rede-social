@@ -18,7 +18,10 @@ const Posts = () => {
     enjoyComment,
     hateComment,
     stringToDate,
+    getPostsList
   } = useContext(GlobalContext);
+
+  const token = localStorage.getItem('token')
 
   const filteredPost = postList.filter((item) => {
     return item.id === params.id
@@ -28,13 +31,14 @@ const Posts = () => {
 
   useEffect(() => {
     getPostComments(params.id)
-  }, [])
+    getPostsList()
+  }, [token])
 
   const messageList = commentList && commentList.map((item) => {
     return (<CardArea key={item.id}>
       <UserName>
         <p><strong>{item && item.username}</strong> respondeu</p>
-        <Date>criado em {stringToDate(item && item.createdAt)}</Date>
+        <Date> em {stringToDate(item && item.createdAt)}</Date>
       </UserName>
       <Text>
         <h3>{item && item.title}</h3>
@@ -59,7 +63,7 @@ const Posts = () => {
 
         <UserName>
           <p><strong>{post && post.username}</strong> comentou </p>
-          <Date>criado em {stringToDate(post && post.createdAt)}</Date>
+          <Date>em {stringToDate(post && post.createdAt)}</Date>
         </UserName>
         <Text>
           <h3>{post && post.title}</h3>
@@ -90,8 +94,8 @@ const Posts = () => {
       </CommentForm>
 
 
-        {commentList.length >= 1 ? messageList : <h3> Carregando respostas, aguarde...</ h3>}
-    
+      {!commentList.length || commentList.length === 0 ? <h3> Não há nenhum comentário para esse post!</ h3> : messageList}
+
 
     </Body>
   )

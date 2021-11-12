@@ -26,9 +26,12 @@ border-top-right-radius: 7px;
 box-shadow: 3px 3px 3px gray;
 overflow: hidden;
 background-color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
-    width: 90vw;
-    }
+@media(max-width: 600px) and (max-height: 900px) {
+width: 90vw;
+}
+@media(min-width: 601px) and (max-width: 900px) {
+width: 90vw;
+}
 `
 
 export const UserName = styled.div`
@@ -38,21 +41,32 @@ border-bottom: 1px solid grey;
 padding-left: 8px;
 display: flex;
 align-items: center;
-justify-content: space-between;
-overflow: hidden;
 background-color: ${Color1};
 color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
-    width: 100%;
-    }
+cursor: default;
+@media(max-width: 600px) and (max-height: 900px) {
+width: 100%;
+}
+@media(min-width: 601px) and (max-width: 900px) {
+width: 90vw;
+font-size: 22px;
+}
 p {
-    @media(max-width: 400px) and (max-height: 700px) {
-    width: 28vw;
+    width: 30vw;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    @media(min-width: 301px) and (max-width: 900px) and (min-height: 501px) and (max-height: 1300px) {
+    width: 25%;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-right: 2px;
     }
 }
 `
@@ -61,6 +75,22 @@ export const Text = styled.div`
 width: 90%;
 min-height: 6vh;
 margin-left: 12px;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    h3 {
+font-size: 25px;
+}
+p {
+font-size: 18px;
+}
+    }
+@media(max-width: 600px) and (max-height: 900px) {
+h3 {
+font-size: 18px;
+}
+p {
+font-size: 15px;
+}
+}
 `
 
 export const ComentsAndEnjoys = styled.div`
@@ -75,13 +105,36 @@ justify-content: space-between;
 export const Coments = styled.div`
 max-width: 50%;
 margin-right: 8px;
-cursor: pointer;
+cursor: default;
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 501px) and (max-height: 1300px) {
+font-size:12px;
+}
 `
 
-export const Date = styled.p`
+export const Date = styled.h6`
 color: gray;
 font-size: 10px;
 color: ${Color5};
+width: 50%;
+font-weight: 100;
+margin-left: -150px;
+@media(max-width: 600px) and (max-height: 900px) {
+    margin-left: 5px;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    }
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 18px;
+    margin-left: -60px;
+    }
+
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 401px) and (max-height: 1300px) {
+font-size: 8px;
+}
 `
 
 export const Enjoy = styled.div`
@@ -94,10 +147,12 @@ align-items: center;
 export const CountEnjoys = styled.p`
 font-weight: bold;
 margin: 0 10px;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 20px;
+    }
 `
 
 export const DetailButton = styled.div`
-padding-right: 5px;
 width: 8vw;
 font-size: 12px;
 height: 3vh;
@@ -105,14 +160,20 @@ border: none;
 border-top-right-radius: 5px;
 background-color: ${Color1};
 text-align: center;
-overflow-y: auto;
 display: flex;
 justify-content: center;
 align-items: center;
 font-weight: bold;
 color: ${Color5};
 cursor: pointer;
-@media(max-width: 400px) and (max-height: 700px) {
-    width: 20vw;
-    }
+margin-right: -5px;
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 601px) and (max-height: 1300px) {
+font-size: 12px;
+margin-left: 15px;
+}
+
+@media(min-width: 301px) and (max-width: 900px) and (min-height: 401px) and (max-height: 1300px) {
+font-size: 12px;
+margin-left: 11px;
+}
 `

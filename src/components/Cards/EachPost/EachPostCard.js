@@ -13,7 +13,7 @@ const EachPostCard = ({ post }) => {
         <CardArea>
             <UserName>
                 <p><strong>{post.username}</strong></p>
-                <Date>criado em {stringToDate(post && post.createdAt)}</Date>
+                <Date> em {stringToDate(post && post.createdAt)}</Date>
                 <DetailButton onClick={() => goToPosts(history, post.id)}>Detalhes</DetailButton>
             </UserName>
             <Text>

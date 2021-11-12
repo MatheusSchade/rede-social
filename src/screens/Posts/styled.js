@@ -3,18 +3,20 @@ import { Color1, Color5 } from "../../constants/colors"
 import { BsArrowUpCircleFill, BsArrowDownCircleFill } from "react-icons/bs"
 
 export const Body = styled.div`
-margin-top: 13vh;
+margin-top: 11vh;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
-
 `
 
 export const Date = styled.p`
-margin-right: 12px;
+margin-right: 14px;
 color: ${Color5};
 font-size: 10px;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 16px;
+    }
 `
 
 export const UpArrow = styled(BsArrowUpCircleFill)`
@@ -40,9 +42,9 @@ border-radius: 5px;
 box-shadow: 3px 3px 3px gray;
 overflow: hidden;
 background-color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
-    width: 90vw;
-    }
+@media(max-width: 800px) and (max-height: 1300px) {
+width: 90vw;
+}
 `
 
 export const UserName = styled.div`
@@ -57,7 +59,13 @@ background: ${Color1};
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 color: ${Color5};
-@media(max-width: 400px) and (max-height: 700px) {
+cursor: default;
+@media(max-width: 600px) and (max-height: 900px) {
+    width: 100%;
+    font-size: 12px;
+    }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 22px;
     width: 100%;
     }
 `
@@ -66,7 +74,9 @@ export const Text = styled.div`
 width: 90%;
 min-height: 6vh;
 margin-left: 12px;
-
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 20px;
+    }
 `
 
 export const ComentsAndEnjoys = styled.div`
@@ -93,6 +103,9 @@ align-items: center;
 export const CountEnjoys = styled.p`
 font-weight: bold;
 margin: 0 10px;
+@media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 20px;
+    }
 `
 
 export const DetailButton = styled.div`
@@ -127,7 +140,7 @@ border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
 margin: 0 auto;
 
-@media(max-width: 400px) and (max-height: 700px) {
+@media(max-width: 800px) and (max-height: 1300px) {
     width: 90vw;
     }
 input {
@@ -138,7 +151,11 @@ input {
     outline: none; 
     border: none;
     background-color: ${Color5};
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
+    width: 100%;
+    }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 18px;
     width: 100%;
     }
 }
@@ -156,8 +173,12 @@ button {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom: 1px solid ${Color1};
-    @media(max-width: 400px) and (max-height: 700px) {
+    @media(max-width: 600px) and (max-height: 900px) {
     width: 101%;
+    }
+    @media(min-width: 601px) and (max-width: 900px) and (min-height: 901px) and (max-height: 1300px) {
+    font-size: 18px;
+    width: 100%;
     }
 }
 `

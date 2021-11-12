@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import useProtectedPage from "../../hooks/useProtectedPage"
 import { GlobalContext } from "../../contexts/GlobalContext";
 import EachPostCard from "../../components/Cards/EachPost/EachPostCard"
@@ -8,7 +8,11 @@ import { useHistory } from "react-router-dom"
 const Feed = () => {
   useProtectedPage()
   const history = useHistory()
-  const { postList, onSubmitNewPost, form, onChange } = useContext(GlobalContext);
+  const { postList, onSubmitNewPost, form, onChange, getPostsList } = useContext(GlobalContext);
+
+  useEffect(() => {
+    getPostsList()
+  }, [])
 
   const list = postList && postList.map((item) => {
     return <EachPostCard
