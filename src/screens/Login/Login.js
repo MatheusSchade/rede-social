@@ -12,12 +12,6 @@ const Login = () => {
 
   const { onSubmitForm, form, onChange } = useContext(GlobalContext);
 
-  // const onSubmitForm = (event, history) => {
-  //   event.preventDefault()
-  //   clear()
-  //   PostLogin(history)
-  // }
-
   return (
     <LoginScreen>
 
